@@ -10,6 +10,11 @@ body {
 	background-color: rgb(39, 43, 51);
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 /* Header */
 
 .header {
@@ -26,4 +31,15 @@ body {
 .header h1 {
 	text-align: center;
 	color: rgb(251, 192, 45);
+}
+
+/* Characters section */
+
+.characters-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.characters-grid img {
+	height: 600px;
 }
