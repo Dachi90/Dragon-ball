@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: rgb(39, 43, 51);
+}
+
+/* Header */
+
+.header {
+	display: grid;
+	place-content: center;
+}
+
+.header img {
+	width: 100%;
+	max-width: 700px;
+	object-fit: contain;
+}
+
+.header h1 {
+	text-align: center;
+	color: rgb(251, 192, 45);
+}
