@@ -1,28 +1,31 @@
 export const Card = ({ character }) => {
-	const { image, name, race, gender, ki, maxKi, affilation } = character;
+	const { image, name, race, gender, ki, maxKi, affiliation } = character;
 
 	return (
-		<article>
-			<img
-				src={image}
-				alt='character iamge'
-			/>
-			<div>
-				<p>{name}</p>
-				<p>
+		<article className='card'>
+			<div className='card-image-container'>
+				<img
+					className='card-image'
+					src={image}
+					alt='character iamge'
+				/>
+			</div>
+			<div className='card-data-container'>
+				<p className='name'>{name}</p>
+				<p className='race'>
 					{race} - {gender}
 				</p>
-				<p>
+				<p className='base-ki'>
 					Base KI: <br />
-					{ki}
+					<span>{ki} </span>
 				</p>
-				<p>
+				<p className='total-ki'>
 					Total KI: <br />
-					{maxKi}
+					<span>{maxKi}</span>
 				</p>
-				<p>
+				<p className='afilliation'>
 					Affiliation: <br />
-					{affilation}
+					<span>{affiliation}</span>
 				</p>
 			</div>
 		</article>

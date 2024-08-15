@@ -38,8 +38,72 @@ img {
 .characters-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	padding: 3rem;
+	gap: 1rem;
 }
 
-.characters-grid img {
-	height: 600px;
+/* Card */
+
+.card {
+	border-radius: 0.5rem;
+	background-color: rgb(60, 62, 68);
+	width: 280px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.card-image-container {
+	width: 100%;
+	background-image: url('./assets/backgroundCard.webp');
+	background-position: center center;
+	background-size: cover;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	height: 350px;
+	background-color: white;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.card-image {
+	position: absolute;
+	top: -10px;
+	width: 70%;
+	height: 100%;
+	/* min-height: 400px;
+	max-height: 400px; */
+	margin: 0;
+	object-position: center center;
+	z-index: 0;
+	transition: transform 0.6s;
+}
+
+.card-image:hover {
+	transform: scale(1.2);
+}
+
+.card-data-container {
+	padding: 0.5rem;
+	color: white;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	z-index: 1;
+	font-size: 1.1rem;
+}
+
+.name {
+	font-size: 1.8rem;
+}
+
+.race {
+	color: rgb(251, 192, 45);
+}
+
+.card-data-container span {
+	color: rgb(251, 192, 45);
 }
