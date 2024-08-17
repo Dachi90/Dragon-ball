@@ -108,3 +108,10 @@ img {
 .card-data-container span {
 	color: rgb(251, 192, 45);
 }
+
+.more {
+	color: white;
+	font-size: 4rem;
+	text-align: center;
+	padding: 3rem;
+}
