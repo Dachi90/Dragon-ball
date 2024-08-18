@@ -18,10 +18,22 @@ export const CharacterModal = ({ character, setIsModalOpen }) => {
 						/>
 					</div>
 					<div className='character-modal-details'>
-						<p>Nombre:{name}</p>
-						<p>Raza:{race}</p>
-						<p>Planeta:{originPlanet.name}</p>
-						<p>Descripción:{description}</p>
+						<div>
+							<p>
+								Nombre: <span>{name}</span>
+							</p>
+							<p>
+								Raza: <span>{race}</span>
+							</p>
+							<p>
+								Planeta: <span>{originPlanet.name}</span>
+							</p>
+						</div>
+						<div>
+							<p>
+								Descripción: <span>{description}</span>
+							</p>
+						</div>
 					</div>
 					<i
 						className='close-modal'
@@ -32,19 +44,25 @@ export const CharacterModal = ({ character, setIsModalOpen }) => {
 				</div>
 				<div className='transformations-container'>
 					<h2>Transformaciones</h2>
-					{/* No me está renderizando este map */}
-					{transformations.map((transform) => {
-						<div key={transform.id}>
-							<img
-								src={transform.image}
-								alt='transformation image'
-							/>
-							<div>
-								<p>{transform.name}</p>
-								<p>{transform.ki}</p>
-							</div>
-						</div>;
-					})}
+					<div className='transformations-images-container'>
+						{transformations.map((transform) => {
+							return (
+								<div
+									key={transform.id}
+									className='transformation-image-container'
+								>
+									<img
+										src={transform.image}
+										alt='transformation image'
+									/>
+									<div>
+										<p>{transform.name}</p>
+										<p>{transform.ki}</p>
+									</div>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</article>
 		</section>

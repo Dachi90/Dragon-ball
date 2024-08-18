@@ -126,11 +126,11 @@ img {
 /* Modal */
 
 .modal {
-	position: absolute;
+	position: fixed;
 	background-color: transparent;
-	top: 0;
-	width: 100%;
-	min-height: 100%;
+	top: 0vh;
+	width: 100vw;
+	min-height: 100vh;
 	z-index: 10;
 	display: grid;
 	place-content: center;
@@ -170,17 +170,47 @@ img {
 	height: 100%;
 }
 .character-modal-details {
-	width: 70%;
+	width: 80%;
+	display: flex;
+	gap: 1rem;
+}
+
+.character-modal-details p {
+	color: rgb(251, 192, 45);
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.character-modal-details span {
+	color: white;
+	font-size: 1rem;
 }
 
 .close-modal:hover {
 	transform: scale(1.4);
 }
 
-.transformations-container {
-}
-
 .transformations-container h2 {
 	text-align: center;
 	color: white;
+}
+
+.transformations-images-container {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.transformation-image-container {
+	display: grid;
+	grid-template-rows: 90% 10%;
+}
+
+.transformation-image-container img {
+	height: 400px;
+}
+
+.transformation-image-container div p {
+	text-align: center;
 }
