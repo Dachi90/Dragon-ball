@@ -13,7 +13,6 @@ export const Main = () => {
 	}, []);
 
 	const onInersecion = (entries) => {
-		console.log(entries);
 		const firstEntry = entries[0];
 		if (firstEntry.isIntersecting && links.next) {
 			fetchData(links.next);

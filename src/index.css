@@ -122,3 +122,65 @@ img {
 	text-align: center;
 	padding: 2rem;
 }
+
+/* Modal */
+
+.modal {
+	position: absolute;
+	background-color: transparent;
+	top: 0;
+	width: 100%;
+	min-height: 100%;
+	z-index: 10;
+	display: grid;
+	place-content: center;
+}
+.modal-article {
+	position: relative;
+	background-color: darkgray;
+	width: 80vw;
+	height: 80vh;
+	border: 3px solid rgb(251, 192, 45);
+	border-radius: 1rem;
+	display: grid;
+	grid-template-rows: 35% 1fr;
+}
+
+.character-details-cointainer {
+	display: flex;
+	padding: 1rem;
+}
+
+.close-modal {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	cursor: pointer;
+	transition: transform 0.5s ease-in-out;
+}
+
+.character-modal-img {
+	width: 20%;
+	display: flex;
+	justify-content: center;
+}
+
+.character-modal-img img {
+	width: auto;
+	height: 100%;
+}
+.character-modal-details {
+	width: 70%;
+}
+
+.close-modal:hover {
+	transform: scale(1.4);
+}
+
+.transformations-container {
+}
+
+.transformations-container h2 {
+	text-align: center;
+	color: white;
+}
