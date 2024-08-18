@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card } from './Card';
 
 export const Main = () => {
@@ -6,9 +6,36 @@ export const Main = () => {
 	const [links, setLinks] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+	const elementRef = useRef(null);
+
 	useEffect(() => {
 		fetchData('https://dragonball-api.com/api/characters');
 	}, []);
+
+	const onInersecion = (entries) => {
+		console.log(entries);
+		const firstEntry = entries[0];
+		if (firstEntry.isIntersecting && links.next) {
+			fetchData(links.next);
+		}
+	};
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(onInersecion, {
+			root: null,
+			rootMargin: '10px',
+			threshold: 1.0,
+		});
+		if (observer && elementRef.current) {
+			observer.observe(elementRef.current);
+		}
+
+		return () => {
+			if (observer) {
+				observer.disconnect();
+			}
+		};
+	}, [characters]);
 
 	const fetchData = async (url) => {
 		setLoading(true);
@@ -16,32 +43,13 @@ export const Main = () => {
 		const data = await response.json();
 
 		const newCharacters = [...characters, ...data.items];
-		//console.log(newCharacters);
 		setCharacters(newCharacters);
-		console.log(characters);
 
 		const links = data.links;
 		setLinks(links);
-		//console.log(links);
 
 		setLoading(false);
 	};
-
-	const handleScroll = () => {
-		const clientHeight = document.documentElement.clientHeight; // Altura de la ventana visible
-		const scrollTop = document.documentElement.scrollTop; // Altura de scroll disponible hacia arriba
-		const scrollHeight = document.documentElement.scrollHeight; // Altura total de todo el contenido
-
-		const scrollRemaining = Math.abs(clientHeight + scrollTop - scrollHeight);
-		//console.log(scrollRemaining);
-
-		if (scrollRemaining === 0) {
-			//console.log(links.next);
-			fetchData(links.next);
-		}
-	};
-
-	document.addEventListener('scroll', handleScroll);
 
 	return (
 		<>
@@ -57,7 +65,15 @@ export const Main = () => {
 					);
 				})}
 			</section>
-			<p className='more'>&#8659;</p>
+
+			{links.next && (
+				<p
+					className='more'
+					ref={elementRef}
+				>
+					&#8659;
+				</p>
+			)}
 		</>
 	);
 };

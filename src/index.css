@@ -53,6 +53,11 @@ img {
 	flex-direction: column;
 	cursor: pointer;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	opacity: 0.5;
+}
+
+.card {
+	opacity: 1;
 }
 
 .card-image-container {
@@ -109,9 +114,11 @@ img {
 	color: rgb(251, 192, 45);
 }
 
+/* Footer */
+
 .more {
 	color: white;
 	font-size: 4rem;
 	text-align: center;
-	padding: 3rem;
+	padding: 2rem;
 }
