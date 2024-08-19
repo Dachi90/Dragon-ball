@@ -29,7 +29,7 @@ export const CharacterModal = ({ character, setIsModalOpen }) => {
 								Planeta: <span>{originPlanet.name}</span>
 							</p>
 						</div>
-						<div>
+						<div className='character-modal-description'>
 							<p>
 								Descripción: <span>{description}</span>
 							</p>
