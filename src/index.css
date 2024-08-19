@@ -52,12 +52,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-	opacity: 0.5;
-}
-
-.card {
-	opacity: 1;
+	box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card-image-container {
@@ -88,10 +83,13 @@ img {
 }
 
 .card-image:hover {
-	transform: scale(1.2);
+	transform: scale(1.05);
 }
 
 .card-data-container {
+	border: 2px solid rgb(251, 192, 45);
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
 	padding: 0.5rem;
 	color: white;
 	font-weight: bold;
@@ -137,10 +135,10 @@ img {
 }
 .modal-article {
 	position: relative;
-	background-color: rgba(39, 43, 51, 0.9);
+	background-color: rgba(39, 43, 51, 0.98);
 	width: 80vw;
 	height: 90vh;
-	border: 3px solid rgb(251, 192, 45);
+	border: 3px solid white;
 	border-radius: 1rem;
 	display: grid;
 	grid-template-rows: 35% 1fr;
@@ -149,6 +147,7 @@ img {
 .character-details-cointainer {
 	display: flex;
 	padding: 1rem;
+	gap: 1rem;
 }
 
 .close-modal {
@@ -169,15 +168,16 @@ img {
 	height: 100%;
 }
 .character-modal-details {
-	width: 80%;
+	width: 75%;
 	display: flex;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .character-modal-details p {
 	color: rgb(251, 192, 45);
 	font-weight: bold;
 	font-size: 1.1rem;
+	margin-bottom: 1rem;
 }
 
 .character-modal-details span {
