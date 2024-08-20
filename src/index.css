@@ -225,7 +225,7 @@ img {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
 	.modal-article {
 		grid-template-rows: 40% 1fr;
 		width: 90vw;
@@ -281,17 +281,17 @@ img {
 		grid-template-rows: 45% 1fr;
 	}
 
-	.transformations-image-container img {
-		height: 250px;
+	.character-modal-details {
+		flex-direction: column;
+		gap: 0.5rem;
 	}
-}
 
-/* @media only screen and (max-width: 650px) {
-	.modal-article {
-		grid-template-rows: 80% 1fr;
+	.character-modal-description {
+		max-width: max-content;
+		overflow-y: scroll;
 	}
 
 	.transformation-image-container img {
-		height: 80px;
+		height: 250px;
 	}
-} */
+}
