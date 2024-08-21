@@ -218,7 +218,7 @@ img {
 
 @keyframes scroll-horizontal {
 	0% {
-		transform: translateX(0%);
+		transform: translateX(40%);
 	}
 	100% {
 		transform: translateX(-90%);
@@ -266,9 +266,9 @@ img {
 		animation: scroll-horizontal 10s linear infinite;
 		width: fit-content;
 	}
-	/* .transformations-images-container:hover {
+	.transformations-images-container:hover {
 		animation: scroll-horizontal paused;
-	} */
+	}
 
 	.transformation-image-container img {
 		width: 150px;
